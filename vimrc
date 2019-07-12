@@ -19,7 +19,7 @@ set hlsearch
 set showmatch
 
 " misc
-set nu
+"set nu
 set autoread
 
 " open at a line closed before
