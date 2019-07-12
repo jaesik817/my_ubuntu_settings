@@ -1,7 +1,7 @@
 syntax on
 
 " display
-"set number
+set nonumber
 set ruler
 
 " tab setteings
