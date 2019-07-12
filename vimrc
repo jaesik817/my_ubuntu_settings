@@ -1,7 +1,7 @@
 syntax on
 
 " display
-set number
+"set number
 set ruler
 
 " tab setteings
