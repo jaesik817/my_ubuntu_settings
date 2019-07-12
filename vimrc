@@ -22,7 +22,13 @@ set showmatch
 set nu
 set autoread
 
-" pythom
+" open at a line closed before
+ autocmd BufReadPost *
+    \ if line(“‘\””) > 1 && line(“‘\””) <= line(“$”) |
+    \ exe “normal! g`\”” |
+    \ endif
+    
+" python
 au FileType python set cc=80
 highlight ColorColumn   ctermbg=52 guibg=#5f0000
 let g:pymode_folding=0
