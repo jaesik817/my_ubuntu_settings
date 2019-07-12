@@ -14,10 +14,10 @@ cp -R vim ~/.vim
 apt -y install tmux
 
 # Install zsh
-apt -y install zsh
-apt -y install git-core
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-rm -rf ~/.zshrc
-cp zshrc ~/.zshrc
-chsh -s `which zsh`
+#apt -y install zsh
+#apt -y install git-core
+#wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+#rm -rf ~/.zshrc
+#cp zshrc ~/.zshrc
+#chsh -s `which zsh`
 # sudo shutdown -r 0
