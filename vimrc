@@ -21,12 +21,6 @@ set showmatch
 " misc
 "set nu
 set autoread
-
-" open at a line closed before
- autocmd BufReadPost *
-    \ if line(“‘\””) > 1 && line(“‘\””) <= line(“$”) |
-    \ exe “normal! g`\”” |
-    \ endif
     
 " python
 au FileType python set cc=80
