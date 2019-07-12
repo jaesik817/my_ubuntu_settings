@@ -1,4 +1,6 @@
 apt update
+apt -y install screen
+apt -y install tmux
 
 cp bashrc ~/.bashrc
 cp tmux.reset.conf ~/.tmux.reset.conf
@@ -6,12 +8,9 @@ cp tmux.2nd.conf ~/.tmux.2nd.conf
 cp tmux.conf ~/.tmux.conf
 cp viminfo ~/.viminfo
 cp vimrc ~/.vimrc
-cp zshrc ~/.zshrc
+#cp zshrc ~/.zshrc
 
 cp -R vim ~/.vim
-
-# Install tmux
-apt -y install tmux
 
 # Install zsh
 #apt -y install zsh
