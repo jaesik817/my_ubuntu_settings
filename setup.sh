@@ -1,6 +1,8 @@
 apt update
 apt -y install screen
 apt -y install tmux
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 
 cp bashrc ~/.bashrc
 cp tmux.reset.conf ~/.tmux.reset.conf
