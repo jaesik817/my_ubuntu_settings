@@ -13,6 +13,7 @@ cp vimrc ~/.vimrc
 #cp zshrc ~/.zshrc
 
 cp -R vim ~/.vim
+cp -R colors ~/.vim/
 
 # Install zsh
 #apt -y install zsh

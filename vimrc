@@ -41,3 +41,6 @@ au BufReadPost *
 \ exe "norm g`\"" |
 \ endif
 
+" color scheme
+" set background=dark
+" colorscheme solarized
