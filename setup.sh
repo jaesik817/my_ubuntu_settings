@@ -1,25 +1,14 @@
+# Initial installation
 apt update
 apt -y install screen
-apt -y install tmux
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-cp vim-pydocstring vim/plugged/
 cp bashrc ~/.bashrc
-cp tmux.reset.conf ~/.tmux.reset.conf
-cp tmux.2nd.conf ~/.tmux.2nd.conf
-cp tmux.conf ~/.tmux.conf
+
+# vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp viminfo ~/.viminfo
 cp vimrc ~/.vimrc
-#cp zshrc ~/.zshrc
-
 cp -R vim ~/.vim
-cp -R colors ~/.vim/
 
-# Install zsh
-#apt -y install zsh
-#apt -y install git-core
-#wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-#rm -rf ~/.zshrc
-#cp zshrc ~/.zshrc
-#chsh -s `which zsh`
-# sudo shutdown -r 0
+# Git initial Config
+git config --global user.name "Jaesik Yoon"
+git config --global user.email jaesik.yoon.kr@gmail.com
