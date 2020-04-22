@@ -21,14 +21,15 @@ set showmatch
 " misc
 set nu
 set autoread
-    
-" python
-au FileType python set cc=80
-highlight ColorColumn   ctermbg=52 guibg=#5f0000
+set cc=80
 
-call plug#begin('~/.vim/vim/plugged')
-Plug 'python-mode/python-mode'
-call plug#end()
+" python
+"au FileType python set cc=80
+"highlight ColorColumn   ctermbg=52 guibg=#5f0000
+
+"call plug#begin('~/.vim/vim/plugged')
+"Plug 'python-mode/python-mode'
+"call plug#end()
 
 " remember the last position
 au BufReadPost *
