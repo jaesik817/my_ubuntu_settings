@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/cortex/users/jy651/keypoint/models'
+let g:netrw_dirhist_2='/cortex/users/jy651/video-transformer/models/vtnoimg'
+let g:netrw_dirhist_3='/cortex/users/jy651/ddocker'
+let g:netrw_dirhist_4='/cortex/users/jy651/video-transformer/models/vt'
+let g:netrw_dirhist_5='/cortex/users/jy651/video-transformer/models/static'
+let g:netrw_dirhist_6='/cortex/users/jy651/scalor2/main/model/scalor'
