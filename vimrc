@@ -5,9 +5,9 @@ set number
 set ruler
 
 " tab setteings
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set expandtab
 set autoindent
 
@@ -17,17 +17,23 @@ set smartcase
 set incsearch
 set hlsearch
 set showmatch
+set nofoldenable
 
 " misc
 set nu
 set autoread
+set cc=80
 
 " python
 au FileType python set cc=80
 highlight ColorColumn   ctermbg=52 guibg=#5f0000
 
-" python mode plugin
-call plug#begin('~/.vim/vim/plugged')
+" using indent on this file
+let g:pymode_indent = v:false
+" not using rope
+let g:pymode_rope = 0
+
+call plug#begin('~/.vim/plugged')
 Plug 'python-mode/python-mode'
 call plug#end()
 
@@ -36,4 +42,3 @@ au BufReadPost *
 \ if line("'\"") > 0 && line("'\"") <= line("$") |
 \ exe "norm g`\"" |
 \ endif
-
