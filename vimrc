@@ -28,12 +28,9 @@ set cc=80
 au FileType python set cc=80
 highlight ColorColumn   ctermbg=52 guibg=#5f0000
 
-" using indent on this file
 let g:pymode_indent = v:false
-" not using rope
-let g:pymode_rope = 0
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.vim/vim/plugged')
 Plug 'python-mode/python-mode'
 call plug#end()
 
