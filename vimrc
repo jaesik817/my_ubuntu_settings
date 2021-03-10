@@ -5,9 +5,9 @@ set number
 set ruler
 
 " tab setteings
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 set expandtab
 set autoindent
 
@@ -28,7 +28,7 @@ set cc=80
 au FileType python set cc=80
 highlight ColorColumn   ctermbg=52 guibg=#5f0000
 
-let g:pymode_indent = v:false
+"let g:pymode_indent = v:false
 
 call plug#begin('~/.vim/vim/plugged')
 Plug 'python-mode/python-mode'
