@@ -1,5 +1,5 @@
 # Initial installation
-#apt update
+apt-get update
 #apt -y install screen
 #cp bashrc ~/.bashrc
 
@@ -8,6 +8,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 #cp viminfo ~/.viminfo
 cp vimrc ~/.vimrc
 cp -R vim ~/.vim
+
+# tmux
+apt-get install -y tmux
+cp tmux.conf ~/.tmux.conf
 
 # Git initial Config
 git config --global user.name "Jaesik Yoon"
