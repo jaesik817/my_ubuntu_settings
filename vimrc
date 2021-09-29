@@ -5,9 +5,9 @@ set number
 set ruler
 
 " tab setteings
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
 set expandtab
 set autoindent
 
@@ -30,9 +30,9 @@ highlight ColorColumn   ctermbg=52 guibg=#5f0000
 
 "let g:pymode_indent = v:false
 
-call plug#begin('~/.vim/vim/plugged')
-Plug 'python-mode/python-mode'
-call plug#end()
+"call plug#begin('~/.vim/vim/plugged')
+"Plug 'python-mode/python-mode'
+"call plug#end()
 
 " remember the last position
 au BufReadPost *
