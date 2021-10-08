@@ -4,3 +4,5 @@ cd ml-agents-release_18
 pip install -e ./ml-agents-envs
 pip install -e ./ml-agents
 pip install -e ./gym-unity
+pip install pyvirtualdisplay
+pip install portpicker

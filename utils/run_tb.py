@@ -8,7 +8,7 @@ session_name = f'tbdev-{target}'
 os.system(f'tmux new-session -s {session_name} -d')
 os.system(f'tmux split-window -v -p 140 -t {session_name}')
 
-if 'transdreamer' in target:
+if 'dreamer' in target:
   logdir = f'/common/users/jy651/{target}'
 elif target == 'rl-starter-files':
   logdir = f'/common/home/jy651/{target}'
