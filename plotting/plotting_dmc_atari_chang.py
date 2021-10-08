@@ -105,7 +105,7 @@ def atari_load_experiments(args):
   df = df[df.tag.str.contains('scalars/eval_return')]
 
   runs = []
-  task_methods = df.run.apply(lambda run: '/'.join(run.split("/")[1:3])).unique()
+  task_methods = df.run.apply(lambda run: '/'.join(run.split("/")[1:]).split('_seed')[0]).unique()
   for _tm in task_methods:
     task = _tm.split('/')[0]
     if not re.compile(task) in args.atari_tasks:
@@ -113,15 +113,13 @@ def atari_load_experiments(args):
     method = _tm.split('/')[-1]
     _df = df[df.run.str.contains(task)]
     _df = _df[_df.run.str.contains(method)]
-    seeds = _df.run.apply(lambda run: run.split("/")[-1]).unique()
+    seeds = _df.run.apply(lambda run: run.split("_seed")[-1]).unique()
     for _seed in seeds:
       __df = _df[_df.run.str.contains('/'+_seed)]
       xs = pd.DataFrame(__df['step']).to_numpy()
       ys = pd.DataFrame(__df['value']).to_numpy()
-      if 'dreamerv2' in method:
-        _method = 'Dreamer(V2)fromCodes'
-      else:
-        _method = 'Dreamer-torch'
+      if method == 'defaults_atari_chang':
+        _method = 'TransDreamer-Changconfig'
       if _method not in args.colors:
         args.colors[_method] = args.palette[len(args.colors)]
       color = args.colors[_method]
@@ -135,7 +133,7 @@ def dmc_load_experiments(args):
   df = df[df.tag.str.contains('scalars/eval_return')]
 
   runs = []
-  task_methods = df.run.apply(lambda run: '/'.join(run.split("/")[1:3])).unique()
+  task_methods = df.run.apply(lambda run: '/'.join(run.split("/")[1:]).split('_seed')[0]).unique()
   for _tm in task_methods:
     task = _tm.split('/')[0]
     if not re.compile(task) in args.dmc_tasks:
@@ -143,15 +141,13 @@ def dmc_load_experiments(args):
     method = _tm.split('/')[-1]
     _df = df[df.run.str.contains(task)]
     _df = _df[_df.run.str.contains(method)]
-    seeds = _df.run.apply(lambda run: run.split("/")[-1]).unique()
+    seeds = _df.run.apply(lambda run: run.split("_seed")[-1]).unique()
     for _seed in seeds:
       __df = _df[_df.run.str.contains('/'+_seed)]
       xs = pd.DataFrame(__df['step']).to_numpy()
       ys = pd.DataFrame(__df['value']).to_numpy()
-      if 'dreamerv2' in method:
-        _method = 'Dreamer(V2)fromCodes'
-      else:
-        _method = 'Dreamer-torch'
+      if method == 'defaults_atari_chang':
+        _method = 'TransDreamer-Changconfig'
       if _method not in args.colors:
         args.colors[_method] = args.palette[len(args.colors)]
       color = args.colors[_method]
@@ -171,7 +167,7 @@ def atari_load_dreamers(args):
     if method != 'dreamerv2':
       continue
     else:
-      method = 'Dreamer(V2)onPaper'
+      method = 'Dreamer(V2)'
     seed = _data['seed']
     xs = pd.DataFrame(_data['xs']).to_numpy()
     ys = pd.DataFrame(_data['ys']).to_numpy()
@@ -194,7 +190,7 @@ def dmc_load_dreamers(args):
     if not re.compile(task) in args.dmc_tasks:
       continue
     if method == 'dreamer':
-      method = 'Dreamer(V2)onPaper'
+      method = 'Dreamer(V2)'
     xs = pd.DataFrame(_data['xs']).to_numpy()
     ys = pd.DataFrame(_data['ys']).to_numpy()
     if method not in args.colors:
