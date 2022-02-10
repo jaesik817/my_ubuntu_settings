@@ -13,4 +13,7 @@ setup(
     python_requires     = '>=3',
     package_data        = {},
     zip_safe            = False,
+    entry_points={
+        'console_scripts': ['all_utils=all_utils:main'],
+    },
 )
