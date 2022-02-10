@@ -3,7 +3,7 @@ import datetime
 import subprocess
 
 
-def run_tasks(session_name, workdir, commands, servers, inavailable_gpus=None, required_mem_mb=40000, used_mem_torun_mb=10):
+def run_tasks(session_name, workdir, commands, servers, inavailable_gpus=None, required_mem_mb=40000, threshold_to_run_on_used_gpu_mb=10):
 
   # find idle gpus
   idle_gpus = []
@@ -19,7 +19,7 @@ def run_tasks(session_name, workdir, commands, servers, inavailable_gpus=None, r
         total_mem = int(total_mem[:-3])
         used_mem = int(used_mem[:-3])
         if total_mem > int(required_mem_mb): # minimum requirement
-          if used_mem < int(used_mem_torun_mb):
+          if used_mem < int(threshold_to_run_on_used_gpu_mb):
             for _server, _idx in inavailable_gpus:
               if (server==_server) and (i==int(_idx)): # not working gpu
                 continue
