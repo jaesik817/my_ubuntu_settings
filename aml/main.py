@@ -6,4 +6,4 @@ def main(*argv):
     argv = list(sys.argv)[1:]
   if argv[0] == 'stat':
     path = os.path.dirname(inspect.getfile(inspect.currentframe()))
-    os.system("zsh "+os.path.join(path,"server_stats.sh ")+ ' '.join(argv[1:]))
+    os.system("zsh "+os.path.join(path,"server_stats.sh "))

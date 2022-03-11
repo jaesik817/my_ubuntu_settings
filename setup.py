@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name                = 'all_utils',
+    name                = 'aml',
     version             = '0.1',
     description         = 'util function for experiments',
     author              = 'Jaesik Yoon',
@@ -14,6 +14,6 @@ setup(
     package_data        = {},
     zip_safe            = False,
     entry_points={
-        'console_scripts': ['all_utils=all_utils:main'],
+        'console_scripts': ['aml=all_utils:main'],
     },
 )

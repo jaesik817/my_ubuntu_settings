@@ -1,14 +1,7 @@
 #!/bin/zsh
 
 session_name=stats
-if [ $1 = "all" ]
-then
-  servers=(welling bengio hinton sutton jordan jurgen rumelhart)
-  session_name=all_stats
-else
-  servers=("$@")
-  session_name=stats
-fi
+servers=(hinton bengio lecun)
 
 echo $servers
 tmux new-session -s $session_name -d
