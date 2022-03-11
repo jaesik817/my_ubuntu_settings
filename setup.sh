@@ -30,5 +30,6 @@ pip install -e .
 git config --global user.name "Jaesik Yoon"
 git config --global user.email jaesik.yoon.kr@gmail.com
 git config --global core.editor "vim"
+git config --global credential.helper store
 git config --add oh-my-zsh.hide-status 1
 git config --add oh-my-zsh.hide-dirty 1
