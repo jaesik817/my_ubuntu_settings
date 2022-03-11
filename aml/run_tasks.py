@@ -3,7 +3,7 @@ import datetime
 import subprocess
 
 
-def run_tasks(session_name, workdir, commands, servers, inavailable_gpus=None, required_mem_mb=40000, threshold_to_run_on_used_gpu_mb=10):
+def run_tasks(session_name, workdir, commands, servers, inavailable_gpus=None, required_mem_mb=40000, threshold_to_run_on_used_gpu_mb=10, conda_env=None):
 
   # find idle gpus
   idle_gpus = []
@@ -41,6 +41,9 @@ def run_tasks(session_name, workdir, commands, servers, inavailable_gpus=None, r
     server, gpu_idx = idle_gpus[i]
     os.system(f"tmux split-window -v -p 140 -t {session_name}")
     os.system(f'tmux send-keys -t {session_name}:0.{i+1} "ssh {server}" Enter')
+    if conda_env is not None:
+        os.system(f'tmux send-keys -t {session_name}:0.{i+1} "conda deactivate" Enter')
+        os.system(f'tmux send-keys -t {session_name}:0.{i+1} "conda activate {conda_env}" Enter')
     os.system(f'tmux send-keys -t {session_name}:0.{i+1} "cd {workdir}" Enter')
     os.system(f"""
       tmux send-keys -t {session_name}:0.{i+1} "CUDA_VISIBLE_DEVICES={gpu_idx} {_command}" Enter""")
