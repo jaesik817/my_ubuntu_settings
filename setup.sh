@@ -29,3 +29,4 @@ pip install -e .
 # Git initial Config
 git config --global user.name "Jaesik Yoon"
 git config --global user.email jaesik.yoon.kr@gmail.com
+git config --global core.editor "vim"
