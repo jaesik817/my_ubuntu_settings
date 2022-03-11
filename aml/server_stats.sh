@@ -26,12 +26,4 @@ do
     done
   ' Enter
 done
-if [ $1 = "all" ]
-then
-  tmux send-keys -t $session_name:0.0 "ssh welling" Enter
-  tmux send-keys -t $session_name:0.0 "cd /common/users/" Enter
-  tmux send-keys -t $session_name:0.0 "while; do; quota -vs; sleep 2; clear; done" Enter
-else
-  tmux send-keys -t $session_name:0.0 "exit" Enter
-fi
 tmux select-layout -t $session_name tiled

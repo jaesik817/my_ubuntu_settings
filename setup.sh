@@ -9,7 +9,7 @@ cp -R vim ~/.vim
 
 
 # tmux
-apt-get install -y tmux
+sudo apt-get install -y tmux
 cp tmux.conf ~/.tmux.conf
 
 

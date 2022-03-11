@@ -14,6 +14,6 @@ setup(
     package_data        = {},
     zip_safe            = False,
     entry_points={
-        'console_scripts': ['aml=all_utils:main'],
+        'console_scripts': ['aml=aml:main'],
     },
 )
