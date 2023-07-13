@@ -107,14 +107,35 @@ source $ZSH/oh-my-zsh.sh
 alias gi='gpustat -cpu'
 alias gis='gpustats'
 
-# etc
-alias dcd='cd /home/jsyoon/dev_js'
-
 # tmux
 alias tl='tmux ls'
 alias ta='tmux attach-session -t '
 alias tk='tmux kill-session -t '
+alias tka='tmux kill-session -a '
+
+# etc
+alias dcd='cd /home/jsyoon/dev_js'
+alias whilegi='while true; do; gi; sleep 2; done'
+
+# generalized subgoal planner
+alias ccd='cd /home/jsyoon/dev_js/choreo_private'
 
 ##############################################################################
 # Conda
 ##############################################################################
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/jsyoon/dev_js/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/jsyoon/dev_js/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/jsyoon/dev_js/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/jsyoon/dev_js/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+conda activate choreo

@@ -28,11 +28,11 @@ set cc=80
 au FileType python set cc=80
 highlight ColorColumn   ctermbg=52 guibg=#5f0000
 
-"let g:pymode_indent = v:false
+let g:pymode_indent = v:false
 
-"call plug#begin('~/.vim/vim/plugged')
-"Plug 'python-mode/python-mode'
-"call plug#end()
+call plug#begin('~/.vim/vim/plugged')
+Plug 'python-mode/python-mode'
+call plug#end()
 
 " remember the last position
 au BufReadPost *
